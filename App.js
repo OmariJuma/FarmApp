@@ -5,6 +5,7 @@ import AppBar from './Components/UI/AppBar';
 import CarouselCards from './Components/UI/CarouselCards';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Chart from './Components/UI/Chart';
+import TabbedLayout from './Components/UI/TabbedLayout';
 function App() {
   const [active, setActive] = React.useState('');
 
@@ -16,54 +17,8 @@ function App() {
           <View style={styles.container}>
             <CarouselCards />
           </View>
+          <TabbedLayout/>
         </SafeAreaView>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
-        <Text>hi this is new thing</Text>
         {/* <Chart /> */}
       </PaperProvider>
     </ScrollView>
