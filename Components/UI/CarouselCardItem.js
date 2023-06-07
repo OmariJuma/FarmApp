@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     borderRadius: 8,
-    marginTop:15,
+    marginTop:25,
+    marginBottom:15,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

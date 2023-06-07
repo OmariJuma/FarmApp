@@ -1,9 +1,10 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import CarouselCardItem, {SLIDER_WIDTH, ITEM_WIDTH} from './CarouselCardItem';
 import data from './data';
-
+import {Button} from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome';
 const CarouselCards = () => {
   const isCarousel = React.useRef(null);
   const [index, setIndex] = React.useState(0);
@@ -12,14 +13,17 @@ const CarouselCards = () => {
     <View>
       <Carousel
         layout="default"
+        autoplay
+        loop
+        autoplayInterval={5000}
         layoutCardOffset={9}
         ref={isCarousel}
         data={data}
         renderItem={CarouselCardItem}
         sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH/1.5}
+        itemWidth={ITEM_WIDTH / 1.5}
         enableSnap={true}
-        inactiveSlideShift={0}
+        inactiveSlideShift={10}
         useScrollView={true}
         onSnapToItem={index => setIndex(index)}
       />
@@ -38,6 +42,19 @@ const CarouselCards = () => {
         inactiveDotScale={0.6}
         tappableDots={true}
       />
+      <TouchableOpacity style={{marginBottom: '5%'}}>
+        <Button
+          buttonColor="#5BF541"
+          style={{
+            width: '50%',
+            marginStart: '25%',
+            flexDirection: 'row',
+            justifyContent: 'center',
+          }}>
+          <Text style={{color:"white"}}>See more agents  </Text>
+          <Icon size={17} color="white" name="arrow-right" />
+        </Button>
+      </TouchableOpacity>
     </View>
   );
 };

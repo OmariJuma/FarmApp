@@ -1,28 +1,80 @@
 import React from 'react';
 import {PaperProvider, Drawer, Text} from 'react-native-paper';
-import {StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import AppBar from './Components/UI/AppBar';
 import CarouselCards from './Components/UI/CarouselCards';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Chart from './Components/UI/Chart';
 function App() {
   const [active, setActive] = React.useState('');
 
   return (
-    <PaperProvider>
-      <AppBar />
-
-      <SafeAreaView style={styles.container}>
-        <CarouselCards />
-      </SafeAreaView>
-    </PaperProvider>
+    <ScrollView>
+      <PaperProvider>
+        <SafeAreaView>
+          <AppBar />
+          <View style={styles.container}>
+            <CarouselCards />
+          </View>
+        </SafeAreaView>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        <Text>hi this is new thing</Text>
+        {/* <Chart /> */}
+      </PaperProvider>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 0.3,
+    flex: 1,
     // alignContent: 'center',
     backgroundColor: '#fff',
-    alignItems: "center",
+    alignItems: 'center',
     // justifyContent: 'center',
   },
 });
