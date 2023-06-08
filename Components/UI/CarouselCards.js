@@ -44,7 +44,7 @@ const CarouselCards = () => {
       />
       <TouchableOpacity style={{marginBottom: '5%'}}>
         <Button
-          buttonColor="#5BF541"
+          buttonColor="#62D629"
           style={{
             width: '50%',
             marginStart: '25%',

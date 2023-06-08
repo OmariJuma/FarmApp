@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
+import { primaryColor } from './AppBar';
+import ArticleItem from './ArticleItem';
 
 const TabbedLayout = () => {
   const [activeTab, setActiveTab] = useState('All');
@@ -24,7 +26,7 @@ const TabbedLayout = () => {
       <View
         style={{
           flexDirection: 'row',
-          borderBottomColor: 'black',
+          borderBottomColor: primaryColor,
           borderBottomWidth: 3,
           marginTop:20
         }}>
@@ -34,14 +36,11 @@ const TabbedLayout = () => {
             paddingHorizontal: 20,
             paddingVertical: 10,
             marginRight: 10,
-            // backgroundColor: activeTab === 'Tab 2' ? 'blue' : 'gray',
-            // borderRadius: 10,
             borderBottomWidth: 3,
-            borderBottomColor: activeTab === 'All' ? '#5BF541' : 'white',
-
+            borderBottomColor: activeTab === 'All' ? primaryColor : 'white',
             width: '30%',
           }}>
-          <Text style={{color: '#5BF541'}}>All articles</Text>
+          <Text style={{color: activeTab === 'All' ? primaryColor : 'black'}}>All articles</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -49,33 +48,29 @@ const TabbedLayout = () => {
           style={{
             paddingHorizontal: 20,
             paddingVertical: 10,
-            // backgroundColor: activeTab === 'Tab 2' ? 'blue' : 'gray',
-            // borderRadius: 10,
             borderBottomWidth: 3,
-            borderBottomColor: activeTab === 'Tab 2' ? '#5BF541' : 'white',
+            borderBottomColor: activeTab === 'Tab 2' ? primaryColor : 'white',
             width: '30%',
           }}>
-          <Text style={{color: 'black'}}>Tab 2</Text>
+          <Text style={{color:  activeTab === 'Tab 2' ? primaryColor : 'black'}}>Tab 2</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => handleTabPress('Tab 3')}
           style={{
             paddingHorizontal: 20,
             paddingVertical: 10,
-            // backgroundColor: activeTab === 'Tab 2' ? 'blue' : 'gray',
-            // borderRadius: 10,
             borderBottomWidth: 3,
-            borderBottomColor: activeTab === 'Tab 3' ? '#5BF541' : 'white',
+            borderBottomColor: activeTab === 'Tab 3' ? primaryColor : 'white',
             width: '30%',
           }}>
-          <Text style={{color: 'black'}}>Tab 3</Text>
+          <Text style={{color: activeTab === 'Tab 3' ? primaryColor :'black'}}>Tab 3</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Add your content for each tab */}
       {activeTab === 'All' && (
         <View style={{marginTop: 20}}>
           <Text>All articles are here</Text>
+          <ArticleItem/>
         </View>
       )}
 
