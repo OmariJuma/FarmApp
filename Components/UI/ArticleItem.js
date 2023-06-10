@@ -13,29 +13,31 @@ const ArticleItem = (props) => {
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
-            source={{uri: 'https://picsum.photos/700'}}
+            source={{uri: props.image}}
             style={styles.image}
           />
         </View>
         <View style={styles.textContainer}>
           <Text style={{color:"grey", marginLeft:20, backgroundColor:primaryColor, borderTopRightRadius:20}}>Category: {props.category}</Text>
           <Card.Title
+          titleNumberOfLines={10}
             title={props.title}
             titleStyle={{
               fontSize: 16,
               color: 'black',
               textAlign: 'center',
               fontWeight: 'bold',
+              marginTop:15
             }}
           />
           <Card.Content>
-            <Text style={styles.text}>
+            {/* <Text style={styles.text}>
               {`${props.text}`.slice(
                 0,
                 30,
               )}
               ...
-            </Text>
+            </Text> */}
             <View style={{marginTop: 20}}>
               <View style={{flex: 1, flexDirection: 'row', gap: 10}}>
                 <Avatar.Icon
@@ -46,7 +48,7 @@ const ArticleItem = (props) => {
                 />
                 <Text style={styles.adtnlText}>Author: {props.author}</Text>
               </View>
-              <View style={{flex: 1, flexDirection: 'row', gap: 10}}>
+              <View style={{flex: 1, flexDirection: 'row', gap: 10, marginBottom:10,paddingRight:5}}>
                 <Avatar.Icon
                   icon="clock"
                   size={30}
@@ -70,8 +72,8 @@ const styles = StyleSheet.create({
     // backgroundColor:"grey",
     borderRadius: 20,
     margin: 20,
-    borderWidth: 1,
-    borderColor: 'grey',
+    borderWidth: 2,
+    borderColor: primaryColor,
   },
   imageContainer: {
     width: '40%',
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
   },
   adtnlText: {
     color: 'grey',
-  },
+fontSize:12  },
 });
 
 export default ArticleItem;

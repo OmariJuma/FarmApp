@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import { primaryColor } from './AppBar';
 import ArticleItem from './ArticleItem';
+import { articles } from './data';
 
 const TabbedLayout = () => {
   const [activeTab, setActiveTab] = useState('All');
@@ -69,20 +70,19 @@ const TabbedLayout = () => {
 
       {activeTab === 'All' && (
         <View style={{marginTop: 20}}>
-          <Text>All articles are here</Text>
+          {articles.map((article)=>{
+            return(
           <ArticleItem 
-          title="Groundbreaking Discovery: Scientists Uncover Revolutionary Renewable Energy Source"
-          category="science"
-          date="June 10, 2023"
-          author="darren"
-          text='In a major scientific breakthrough, a team of researchers from a leading global institute has unveiled a groundbreaking discovery that promises to revolutionize the world of renewable energy. The team, comprised of renowned scientists and engineers, has identified a highly efficient and sustainable energy source that could potentially replace traditional fossil fuels.
+          key={article.id}
+          title={article.title}
+          category={article.category}
+          date={article.date}
+          author={article.author}
+          image={article.imageUrl}
+          text={article.text}
+          />)
 
-          The new energy source, named "EnergiCore," harnesses the power of quantum mechanics to generate electricity. It is based on a novel concept that involves tapping into the fundamental energy of subatomic particles, resulting in a nearly limitless and environmentally friendly energy supply.
-          
-          Dr. Emily Johnson, the project lead and a pioneer in quantum physics, explains the significance of their findings: "EnergiCore represents a paradigm shift in the field of renewable energy. Unlike solar or wind power, which are dependent on external factors, EnergiCore unlocks the inherent energy potential within matter itself. This discovery has the potential to provide clean, sustainable, and abundant energy for generations to come."
-          
-          The EnergiCore technology utilizes a compact and scalable device that can be easily integrated into existing power infrastructure. Initial tests have shown remarkable energy conversion rates, surpassing any previously known renewable energy method. Moreover, the process is emission-free, mitigating concerns about greenhouse gas emissions and climate change.'
-          />
+          })}
 
         </View>
       )}

@@ -7,8 +7,6 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Chart from './Components/UI/Chart';
 import TabbedLayout from './Components/UI/TabbedLayout';
 function App() {
-  const [active, setActive] = React.useState('');
-
   return (
     <ScrollView>
       <PaperProvider>
