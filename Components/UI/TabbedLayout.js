@@ -3,8 +3,9 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import { primaryColor } from './AppBar';
 import ArticleItem from './ArticleItem';
 import { articles } from './data';
+import { Button } from 'react-native-paper';
 
-const TabbedLayout = () => {
+const TabbedLayout = ({navigation}) => {
   const [activeTab, setActiveTab] = useState('All');
 
   const handleTabPress = tab => {
@@ -23,7 +24,9 @@ const TabbedLayout = () => {
         }}>
         Pick category to access the articles
       </Text>
-
+<Button  onPress={() => navigation.navigate('Second')}>
+  Go next screen
+</Button>
       <View
         style={{
           flexDirection: 'row',
