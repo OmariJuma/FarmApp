@@ -32,7 +32,7 @@ const TabbedLayout = ({navigation}) => {
           flexDirection: 'row',
           borderBottomColor: primaryColor,
           borderBottomWidth: 3,
-          marginTop:20
+          marginTop:20,
         }}>
         <TouchableOpacity
           onPress={() => handleTabPress('All')}
@@ -77,12 +77,14 @@ const TabbedLayout = ({navigation}) => {
             return(
           <ArticleItem 
           key={article.id}
+          id={article.id}
           title={article.title}
           category={article.category}
           date={article.date}
           author={article.author}
           image={article.imageUrl}
           text={article.text}
+          nav={navigation}
           />)
 
           })}

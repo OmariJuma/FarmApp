@@ -1,33 +1,42 @@
 import React from 'react';
 import {TouchableOpacity, Image, StyleSheet, View} from 'react-native';
 import {Avatar, Button, Card, Text} from 'react-native-paper';
-import { primaryColor } from './AppBar';
+import {grey, primaryColor} from './AppBar';
 
-const ArticleItem = (props) => {
+const ArticleItem = (props,{nav}) => {
   const handlePress = () => {
-    // Handle press event
+    props.nav.navigate('Second',{
+      articleId:props.id
+    });
   };
 
   return (
     <TouchableOpacity onPress={handlePress}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <Image
-            source={{uri: props.image}}
-            style={styles.image}
-          />
+          <Image source={{uri: props.image}} style={styles.image} />
         </View>
         <View style={styles.textContainer}>
-          <Text style={{color:"grey", marginLeft:20, backgroundColor:primaryColor, borderTopRightRadius:20}}>Category: {props.category}</Text>
+          <Text
+            style={{
+              color: primaryColor,
+              marginLeft: 20,
+              backgroundColor: 'white',
+              borderTopRightRadius: 20,
+              borderBottomColor: primaryColor,
+              borderBottomWidth: 1,
+            }}>
+            Category: {props.category}
+          </Text>
           <Card.Title
-          titleNumberOfLines={10}
+            titleNumberOfLines={10}
             title={props.title}
             titleStyle={{
               fontSize: 16,
               color: 'black',
               textAlign: 'center',
               fontWeight: 'bold',
-              marginTop:15
+              marginTop: 15,
             }}
           />
           <Card.Content>
@@ -48,7 +57,14 @@ const ArticleItem = (props) => {
                 />
                 <Text style={styles.adtnlText}>Author: {props.author}</Text>
               </View>
-              <View style={{flex: 1, flexDirection: 'row', gap: 10, marginBottom:10,paddingRight:5}}>
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: 'row',
+                  gap: 10,
+                  marginBottom: 10,
+                  paddingRight: 5,
+                }}>
                 <Avatar.Icon
                   icon="clock"
                   size={30}
@@ -96,7 +112,8 @@ const styles = StyleSheet.create({
   },
   adtnlText: {
     color: 'grey',
-fontSize:12  },
+    fontSize: 12,
+  },
 });
 
 export default ArticleItem;

@@ -29,7 +29,7 @@ function App() {
               tabBarActiveTintColor: primaryColor,
               tabBarInactiveTintColor: 'grey',
               tabBarLabelStyle: {paddingBottom: 10, fontSize: 10},
-              tabBarStyle: {padding: 10, height: 60},
+              tabBarStyle: {padding: 10, height: 60, borderTopColor:primaryColor, borderTopWidth:1},
               tabBarIcon: ({focused, color, size}) => {
                 let iconName;
                 let rn = route.name;

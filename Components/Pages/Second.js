@@ -1,15 +1,18 @@
-import * as React from "react";
-import {Button} from 'react-native-paper';
+import * as React from 'react';
+import {Button, Text} from 'react-native-paper';
 import {Alert, View} from 'react-native';
-const Second = ({navigation}) => {
+import {articles} from '../UI/data';
+const Second = ({navigation, route}) => {
+  var id;
+
+  if(route.params){
+    id = route.params.articleId;
+  }
+  console.log(route);
   return (
     <View>
-      <Button
-        onClick={() => {
-          Alert('This is the second screen');
-        }}>
-        Second
-      </Button>
+      {id && <Text>{articles[id].text}</Text>}
+      {!id && <Text>Nothing</Text>}
     </View>
   );
 };
