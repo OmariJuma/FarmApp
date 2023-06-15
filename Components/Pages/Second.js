@@ -4,6 +4,7 @@ import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {articles} from '../UI/data';
 import ArticleInfo from '../UI/ArticleInfo';
 import LikeCommentShare from '../UI/LikeCommentShare';
+import Input from '../UI/Input';
 const Second = ({navigation, route}) => {
   var id;
 
@@ -32,6 +33,7 @@ const Second = ({navigation, route}) => {
           </Text>
           <Text style={styles.text}>{articles[id - 1].text}</Text>
           <LikeCommentShare/>
+          <Input/>
         </View>
       )}
       {!id && <Text>Nothing</Text>}
