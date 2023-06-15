@@ -3,6 +3,7 @@ import {Button, Text} from 'react-native-paper';
 import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import {articles} from '../UI/data';
 import ArticleInfo from '../UI/ArticleInfo';
+import LikeCommentShare from '../UI/LikeCommentShare';
 const Second = ({navigation, route}) => {
   var id;
 
@@ -30,6 +31,7 @@ const Second = ({navigation, route}) => {
             Image source: {articles[id - 1].imageUrl}
           </Text>
           <Text style={styles.text}>{articles[id - 1].text}</Text>
+          <LikeCommentShare/>
         </View>
       )}
       {!id && <Text>Nothing</Text>}
